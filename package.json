@@ -1,0 +1,16 @@
+{
+  "name": "bubble-menu",
+  "main": "./lib/bubble-menu",
+  "version": "0.0.0",
+  "description": "Atom bubble menu for quick navigation",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "bubble-menu:toggle"
+  },
+  "repository": "https://github.com/dann254/bubble-menu",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}
