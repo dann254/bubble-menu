@@ -3,6 +3,391 @@
 // See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
 // for a full listing of what's available.
 @import "ui-variables";
+@import "icons";
+@import "variables";
 
-.bubble-menu {
+.ice-bubble-container {
+  padding: 0;
+  right: @bubble-right;
+  bottom: @bubble-bottom;
+  position: absolute;
+
+  &.bubble-display:hover {
+    .ice-bubble-menu {
+      visibility: visible;
+    }
+  }
+  &.bubble-hide {
+    .ice-bubble-menu {
+      visibility: hidden;
+    }
+  }
+  .ice-bubble-menu {
+    display: block;
+    margin: 50px auto 0;
+    width: @size;
+    height: @size;
+    padding: 0;
+    position: relative;
+
+    li {
+      display: block;
+      width: @size;
+      height: @size;
+      border-radius: 50%;
+      opacity: 0.8;
+      position: absolute;
+      font-size: 16px;
+      top: 0;
+      left: 0;
+      transition: transform 0.06s ease-out, opacity 0.06s ease-out,
+        color 0.06s ease-out;
+      cursor: pointer;
+      text-align: center;
+      line-height: @line-height;
+      color: @color;
+      font-family: "fontawesome";
+      color: transparent;
+
+      background-color: black;
+      border: 2px solid @color;
+      transform: translate(0, 0);
+
+      & > span {
+        position: absolute;
+        z-index: -1;
+        height: @size;
+        right: @size - 20px;
+        background-color: black;
+        line-height: 37px;
+        font-size: 13px;
+        font-style: bold;
+        margin-top: -2px;
+        padding: 0 30px 0 20px;
+        border: 2px solid cyan;
+        border-right: 0;
+        border-right-color: transparent;
+        border-top-left-radius: @border-radius;
+        border-bottom-left-radius: @border-radius;
+        transform: scaleX(0);
+        transition-duration: 0s;
+        transform-origin: right;
+        opacity: 0;
+        white-space: nowrap;
+      }
+
+      &:first-of-type {
+        color: cyan;
+      }
+      &:first-child:after {
+        display: none;
+      }
+      &:nth-child(1) {
+        z-index: 9;
+        transition-duration: @transitionTime * 1;
+      }
+      &:nth-child(2) {
+        z-index: 8;
+        transition-duration: @transitionTime * 2;
+      }
+      &:nth-child(3) {
+        z-index: 7;
+        transition-duration: @transitionTime * 3;
+      }
+      &:nth-child(4) {
+        z-index: 6;
+        transition-duration: @transitionTime * 4;
+      }
+      &:nth-child(5) {
+        z-index: 5;
+        transition-duration: @transitionTime * 5;
+      }
+      &:nth-child(6) {
+        z-index: 4;
+        transition-duration: @transitionTime * 6;
+      }
+      &:nth-child(7) {
+        z-index: 3;
+        transition-duration: @transitionTime * 7;
+      }
+      &:nth-child(8) {
+        z-index: 2;
+        transition-duration: @transitionTime * 8;
+      }
+      &:nth-child(9) {
+        z-index: 1;
+        transition-duration: @transitionTime * 9;
+      }
+      &:nth-child(10) {
+        z-index: 0;
+        transition-duration: @transitionTime * 10;
+      }
+      &:nth-child(11) {
+        z-index: 0;
+        transition-duration: @transitionTime * 11;
+      }
+      &:nth-child(12) {
+        z-index: 0;
+        transition-duration: @transitionTime * 12;
+      }
+      &:nth-child(13) {
+        z-index: 0;
+        transition-duration: @transitionTime * 13;
+      }
+      &:nth-child(14) {
+        z-index: 0;
+        transition-duration: @transitionTime * 14;
+      }
+      &:nth-child(15) {
+        z-index: 0;
+        transition-duration: @transitionTime * 15;
+      }
+      &:nth-child(16) {
+        z-index: 0;
+        transition-duration: @transitionTime * 16;
+      }
+    }
+  }
+  .transformium {
+    height: (@bubbles * @offsetAmount) * @size;
+
+    li {
+      color: @color;
+
+      &:hover > span {
+        opacity: 1;
+        transform: scaleX(1);
+        transition-duration: 0.5s;
+        transform-origin: right;
+        width: auto;
+      }
+
+      &:nth-child(1) {
+        transform: translate(0, (0) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (0) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 1;
+        }
+      }
+
+      &:nth-child(2) {
+        transform: translate(0, (1) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (1) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 2;
+        }
+      }
+
+      &:nth-child(3) {
+        transform: translate(0, (2) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (2) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 3;
+        }
+      }
+      &:nth-child(4) {
+        transform: translate(0, (3) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (3) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 4;
+        }
+      }
+      &:nth-child(5) {
+        transform: translate(0, (4) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (4) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 5;
+        }
+      }
+      &:nth-child(6) {
+        transform: translate(0, (5) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (5) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 6;
+        }
+      }
+      &:nth-child(7) {
+        transform: translate(0, (6) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (6) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 7;
+        }
+      }
+      &:nth-child(8) {
+        transform: translate(0, (7) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (7) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 8;
+        }
+      }
+      &:nth-child(9) {
+        transform: translate(0, (8) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (8) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 9;
+        }
+      }
+      &:nth-child(10) {
+        transform: translate(0, (9) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (9) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 10;
+        }
+      }
+      &:nth-child(11) {
+        transform: translate(0, (10) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (10) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 11;
+        }
+      }
+      &:nth-child(12) {
+        transform: translate(0, (11) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (11) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 12;
+        }
+      }
+      &:nth-child(13) {
+        transform: translate(0, (12) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (12) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 13;
+        }
+      }
+      &:nth-child(14) {
+        transform: translate(0, (13) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (13) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 14;
+        }
+      }
+      &:nth-child(15) {
+        transform: translate(0, (14) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (14) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 15;
+        }
+      }
+      &:nth-child(16) {
+        transform: translate(0, (15) * (@offsetAmount*100%));
+
+        &:hover {
+          opacity: 1;
+          transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+          transform: translate(0, (15) * (@offsetAmount*100%)) scale(1.15, 1.15);
+          transition-duration: @transitionTime*2;
+        }
+        &:after {
+          opacity: 1;
+          transition-delay: (@transitionTime / 1.5) * 16;
+        }
+      }
+    }
+  }
 }

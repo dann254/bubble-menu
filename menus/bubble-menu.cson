@@ -3,7 +3,7 @@
   'atom-text-editor': [
     {
       'label': 'Toggle bubble-menu'
-      'command': 'bubble-menu:toggle'
+      'command': 'bubble-menu:config'
     }
   ]
 'menu': [
@@ -13,8 +13,8 @@
       'label': 'bubble-menu'
       'submenu': [
         {
-          'label': 'Toggle'
-          'command': 'bubble-menu:toggle'
+          'label': 'Open'
+          'command': 'bubble-menu:config'
         }
       ]
     ]
