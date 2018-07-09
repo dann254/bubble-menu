@@ -18,6 +18,7 @@ The easiest way to install bubble-menu is to do as follows:
 - Click "+ Install"
 - Search for `bubble-menu` and click `packages` button to search.
 - Browse for `bubble-menu` and click `install`
+- Restart atom to activate the package.
 
 Alternatively you can use the [Atom Package Manager](https://github.com/atom/apm):
 
