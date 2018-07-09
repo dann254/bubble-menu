@@ -35,19 +35,26 @@ class BubbleMenuView
         throw err
       return
 
+    counter = 1
     for crust in @crusts
-      bubble = document.createElement 'li'
-      bubble.classList.add 'menu-item'
-      bubble.setAttribute 'data-event-name', crust.command
-      bubble.classList.add crust.icon
+      if counter < 16
+        bubble = document.createElement 'li'
+        bubble.classList.add 'menu-item'
+        bubble.setAttribute 'data-event-name', crust.command
+        bubble.classList.add crust.icon
 
-      bubbleText = document.createElement 'span'
-      bubbleText.classList.add 'bubbleText'
-      textVariables = document.createTextNode(crust.text)
-      bubbleText.appendChild textVariables
+        bubbleText = document.createElement 'span'
+        bubbleText.classList.add 'bubbleText'
+        textVariables = document.createTextNode(crust.text)
+        bubbleText.appendChild textVariables
 
-      bubble.appendChild bubbleText
-      menu_items.appendChild bubble
+        bubble.appendChild bubbleText
+        menu_items.appendChild bubble
+
+        counter += 1
+      else
+        atom.notifications.addWarning("More than 15 bubble configurations found. Extra bubbles not displayed.", {dismissable: true})
+        break
 
     @element.appendChild(menu_items)
 

@@ -2,7 +2,7 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle bubble-menu'
+      'label': 'bubble-menu-config'
       'command': 'bubble-menu:config'
     }
   ]
