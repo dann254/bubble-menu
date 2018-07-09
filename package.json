@@ -1,7 +1,7 @@
 {
   "name": "bubble-menu",
   "main": "./lib/bubble-menu",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Atom bubble menu for quick navigation",
   "keywords": [
     "menu",
