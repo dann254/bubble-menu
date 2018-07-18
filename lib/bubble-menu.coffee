@@ -45,7 +45,7 @@ module.exports = BubbleMenu =
     @subscriptions.add atom.commands.add 'atom-workspace', 'bubble-menu:config': => @bconfig()
 
     @bubbleMenuView = new BubbleMenuView(state.bubbleMenuViewState)
-    workspaceElement = atom.views.getView(atom.workspace).querySelector '.vertical'
+    workspaceElement = atom.views.getView(atom.workspace).querySelector '.vertical > .panes'
     workspaceElement.appendChild @bubbleMenuView.getElement()
 
     start(@close)
