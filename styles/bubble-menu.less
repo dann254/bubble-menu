@@ -11,6 +11,9 @@
   right: @bubble-right;
   bottom: @bubble-bottom;
   position: absolute;
+  height: 40px;
+  width:40px;
+  overflow: visible;
 
   &.bubble-display:hover {
     .ice-bubble-menu {
@@ -28,7 +31,8 @@
     width: @size;
     height: @size;
     padding: 0;
-    position: relative;
+    position: absolute;
+    bottom: 5px;
 
     li {
       display: block;
